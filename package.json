@@ -1,0 +1,19 @@
+{
+  "name": "devnove-site",
+  "version": "1.0.0",
+  "description": "Portfolio web de Christian Milanés: proyectos de desarrollo, diseño, clases y ciberseguridad.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "npx @tailwindcss/cli -i ./assets/css/styles.css -o ./dist/output.css",
+    "watch:css": "npx @tailwindcss/cli -i ./assets/css/styles.css -o ./dist/output.css --watch",
+    "start": "npm run watch:css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "tailwindcss": "^4.1.17"
+  }
+}
