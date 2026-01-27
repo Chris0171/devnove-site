@@ -3,7 +3,6 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 const base = import.meta.env.BASE_URL || '/devnove-site/';
 ---
 <BaseLayout base={base}>
-<BaseLayout base={base}>
   <main>
     <h1>Descarga privada para Cliente 1</h1>
     <div id="form-section">
@@ -39,8 +38,4 @@ const base = import.meta.env.BASE_URL || '/devnove-site/';
       });
     </script>
   </main>
-
----
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-const base = Astro.base || '/devnove-site';
----
+</BaseLayout>

@@ -1,16 +1,20 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-const base = import.meta.env.BASE_URL || '/devnove-site/';
+import BaseLayout from '../../layouts/BaseLayout.astro'
+const base = import.meta.env.BASE_URL || '/devnove-site/'
 ---
-<BaseLayout base={base}>
-  <main>
-    <h1>Zona de Descargas</h1>
-    <p>En esta sección, los clientes pueden descargar sus aplicaciones empaquetadas.</p>
-    <ul>
-      <li><a href={`${base}descargas/cliente1`}>Descarga privada Cliente 1</a></li>
-      <!-- Agrega más clientes aquí -->
-    </ul>
-  </main>
-</BaseLayout>
-    </main>
 
+<BaseLayout base={base}>
+	<main>
+		<h1>Zona de Descargas</h1>
+		<p>
+			En esta sección, los clientes pueden descargar sus aplicaciones
+			empaquetadas.
+		</p>
+		<ul>
+			<li>
+				<a href={`${base}descargas/cliente1`}>Descarga privada Cliente 1</a>
+			</li>
+			<!-- Agrega más clientes aquí -->
+		</ul>
+	</main>
+</BaseLayout>
