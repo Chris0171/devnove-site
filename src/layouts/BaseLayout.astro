@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
+const { base = '/devnove-site' } = Astro.props;
 ---
 
 <html lang="es">
@@ -8,10 +9,10 @@ import Navbar from "../components/Navbar.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="/devnove-site/styles/global.css" />
     <slot name="head" />
-    <title><slot name="title" />Mi Sitio Web</title>
+    <title><slot name="title" />Devnove</title>
   </head>
   <body>
-    <Navbar />
+    <Navbar base={base} />
     <slot />
   </body>
 </html>

@@ -1,4 +1,5 @@
 ---
+const { base = '/devnove-site' } = Astro.props;
 ---
 
 <style>
@@ -61,16 +62,12 @@
 }
 </style>
 
----
-const base = Astro.base || '/devnove-site';
----
-
 <nav class="navbar">
   <div class="navbar-logo">DEVNOVE</div>
   <div class="navbar-links">
-    <a href="{base}/">Inicio</a>
-    <a href="{base}/portfolio/">Portafolio</a>
-    <a href="{base}/descargas/">Descargas</a>
-    <a href="{base}/contacto/">Contacto</a>
+    <a href={`${base}`}>Inicio</a>
+    <a href={`${base}portfolio/`}>Portafolio</a>
+    <a href={`${base}descargas/`}>Descargas</a>
+    <a href={`${base}contacto/`}>Contacto</a>
   </div>
 </nav>

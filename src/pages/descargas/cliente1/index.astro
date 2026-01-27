@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+const base = import.meta.env.BASE_URL || '/devnove-site/';
 ---
-<BaseLayout>
+<BaseLayout base={base}>
+<BaseLayout base={base}>
   <main>
     <h1>Descarga privada para Cliente 1</h1>
     <div id="form-section">
@@ -14,7 +16,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
     </div>
     <div id="download-section" style="display:none;">
       <p>¡Contraseña correcta! Descarga tu archivo aquí:</p>
-      <a href="/clientes/cliente1-app.zip" download>Descargar aplicación</a>
+      <a href={`${base}clientes/cliente1-app.zip`} download>Descargar aplicación</a>
     </div>
     <script is:inline>
       document.addEventListener('DOMContentLoaded', function() {
@@ -37,4 +39,8 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
       });
     </script>
   </main>
-</BaseLayout>
+
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+const base = Astro.base || '/devnove-site';
+---
