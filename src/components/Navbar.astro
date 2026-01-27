@@ -61,12 +61,16 @@
 }
 </style>
 
+---
+const base = Astro.base || '/devnove-site';
+---
+
 <nav class="navbar">
   <div class="navbar-logo">DEVNOVE</div>
   <div class="navbar-links">
-    <a href="/">Inicio</a>
-    <a href="/portfolio/">Portafolio</a>
-    <a href="/descargas/">Descargas</a>
-    <a href="/contacto/">Contacto</a>
+    <a href="{base}/">Inicio</a>
+    <a href="{base}/portfolio/">Portafolio</a>
+    <a href="{base}/descargas/">Descargas</a>
+    <a href="{base}/contacto/">Contacto</a>
   </div>
 </nav>
