@@ -1,11 +1,13 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-const base = import.meta.env.BASE_URL || '/devnove-site/';
+import BaseLayout from '../../layouts/BaseLayout.astro'
+const base = import.meta.env.BASE_URL || '/devnove-site/'
 ---
-<BaseLayout base={base}>
-  <main>
-    <h1>Mi Portafolio</h1>
-    <p>Aquí podrás ver algunos de mis proyectos destacados.</p>
-    <!-- Aquí irán los proyectos -->
-  </main>
+
+<BaseLayout base={base} title="Portafolio | Devnove">
+	<span slot="title">Portafolio | </span>
+	<main>
+		<h1>Mi Portafolio</h1>
+		<p>Aquí podrás ver algunos de mis proyectos destacados.</p>
+		<!-- Aquí irán los proyectos -->
+	</main>
 </BaseLayout>

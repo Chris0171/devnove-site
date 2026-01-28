@@ -3,48 +3,144 @@ import BaseLayout from '../../../layouts/BaseLayout.astro'
 const base = import.meta.env.BASE_URL || '/devnove-site/'
 ---
 
-<BaseLayout base={base}>
-	<main>
+<BaseLayout base={base} title="Descarga privada Yosbany | Devnove">
+	<span slot="title">Descarga privada Yosbany | </span>
+	<style>
+		.private-download-container {
+			max-width: 400px;
+			margin: 3rem auto;
+			background: #fff;
+			border-radius: 1.2rem;
+			box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+			padding: 2.5rem 2rem 2rem 2rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.private-download-container h1 {
+			font-size: 1.3rem;
+			margin-bottom: 2rem;
+			color: #18181b;
+			text-align: center;
+		}
+		.private-form {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			gap: 1.2rem;
+			margin-bottom: 1.5rem;
+		}
+		.private-form label {
+			font-weight: 500;
+			color: #18181b;
+			margin-bottom: 0.2rem;
+		}
+		.private-form input[type='password'] {
+			padding: 0.7rem 1rem;
+			border: 1px solid #cbd5e1;
+			border-radius: 0.5rem;
+			font-size: 1rem;
+			outline: none;
+			transition: border 0.2s;
+		}
+		.private-form input[type='password']:focus {
+			border: 1.5px solid #38bdf8;
+		}
+		.private-form button {
+			background: linear-gradient(90deg, #38bdf8 0%, #0ea5e9 100%);
+			color: #fff;
+			border: none;
+			border-radius: 0.5rem;
+			padding: 0.7rem 1rem;
+			font-size: 1rem;
+			font-weight: 600;
+			cursor: pointer;
+			transition: background 0.2s;
+		}
+		.private-form button:hover {
+			background: linear-gradient(90deg, #0ea5e9 0%, #38bdf8 100%);
+		}
+		.private-error {
+			color: #ef4444;
+			font-size: 0.98rem;
+			min-height: 1.2em;
+			margin-top: -0.8rem;
+			margin-bottom: 0.5rem;
+			text-align: center;
+		}
+		.private-download-link {
+			display: inline-block;
+			margin-top: 1.5rem;
+			background: #38bdf8;
+			color: #fff;
+			padding: 0.8rem 1.5rem;
+			border-radius: 0.5rem;
+			font-weight: 600;
+			font-size: 1.1rem;
+			text-decoration: none;
+			box-shadow: 0 2px 8px rgba(56, 189, 248, 0.08);
+			transition: background 0.2s;
+		}
+		.private-download-link:hover {
+			background: #0ea5e9;
+		}
+		@media (max-width: 600px) {
+			.private-download-container {
+				padding: 1.2rem 0.5rem;
+			}
+		}
+	</style>
+	<div class="private-download-container">
 		<h1>Descarga privada para YOSBANY GARCES</h1>
 		<div id="form-section">
 			<form
 				id="private-download-form"
+				class="private-form"
 				autocomplete="off"
 				onsubmit="return false;"
 			>
-				<label>Introduce tu contraseña para descargar:</label><br />
-				<input type="password" id="password" required />
+				<label for="password">Introduce tu contraseña para descargar:</label>
+				<input
+					type="password"
+					id="password"
+					required
+					placeholder="Contraseña"
+				/>
 				<button type="submit">Acceder</button>
-				<p id="error-msg" style="color:red"></p>
+				<p id="error-msg" class="private-error"></p>
 			</form>
 		</div>
-		<div id="download-section" style="display:none;">
+		<div
+			id="download-section"
+			style="display:none; width:100%; text-align:center;"
+		>
 			<p>¡Contraseña correcta! Descarga tu archivo aquí:</p>
 			<a
 				href="https://drive.google.com/uc?export=download&id=1xCN59sDJOQEOoSESk4SZs8zmkyYGIAPm"
 				target="_blank"
-				rel="noopener">Descargar aplicación</a
+				rel="noopener"
+				class="private-download-link">Descargar aplicación</a
 			>
 		</div>
-		<script is:inline>
-			document.addEventListener('DOMContentLoaded', function () {
-				const PASSWORD = 'Yos_b_xL_7_p' // Cambia esta contraseña para cada cliente
-				const form = document.getElementById('private-download-form')
-				const errorMsg = document.getElementById('error-msg')
-				const formSection = document.getElementById('form-section')
-				const downloadSection = document.getElementById('download-section')
-				if (form) {
-					form.addEventListener('submit', function () {
-						const pass = document.getElementById('password').value
-						if (pass === PASSWORD) {
-							formSection.style.display = 'none'
-							downloadSection.style.display = 'block'
-						} else {
-							errorMsg.textContent = 'Contraseña incorrecta'
-						}
-					})
-				}
-			})
-		</script>
-	</main>
+	</div>
+	<script is:inline>
+		document.addEventListener('DOMContentLoaded', function () {
+			const PASSWORD = 'Yos_b_xL_7_p' // Cambia esta contraseña para cada cliente
+			const form = document.getElementById('private-download-form')
+			const errorMsg = document.getElementById('error-msg')
+			const formSection = document.getElementById('form-section')
+			const downloadSection = document.getElementById('download-section')
+			if (form) {
+				form.addEventListener('submit', function () {
+					const pass = document.getElementById('password').value
+					if (pass === PASSWORD) {
+						formSection.style.display = 'none'
+						downloadSection.style.display = 'block'
+					} else {
+						errorMsg.textContent = 'Contraseña incorrecta'
+					}
+				})
+			}
+		})
+	</script>
 </BaseLayout>

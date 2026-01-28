@@ -1,18 +1,20 @@
 ---
-import Navbar from "../components/Navbar.astro";
-const { base = '/devnove-site' } = Astro.props;
+import Navbar from '../components/Navbar.astro'
+const { base = '/devnove-site', title = 'Devnove' } = Astro.props
 ---
 
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="/devnove-site/styles/global.css" />
-    <slot name="head" />
-    <title><slot name="title" />Devnove</title>
-  </head>
-  <body>
-    <Navbar base={base} />
-    <slot />
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet" href="/devnove-site/styles/global.css" />
+		<link rel="icon" type="image/svg+xml" href="/devnove-site/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/devnove-site/favicon.ico" />
+		<slot name="head" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Navbar base={base} />
+		<slot />
+	</body>
 </html>

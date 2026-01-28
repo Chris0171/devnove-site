@@ -1,13 +1,15 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-const base = import.meta.env.BASE_URL || '/devnove-site/';
+import BaseLayout from '../../layouts/BaseLayout.astro'
+const base = import.meta.env.BASE_URL || '/devnove-site/'
 ---
-<BaseLayout base={base}>
-  <main>
-    <h1>Contacto</h1>
-    <p>Puedes contactarme a través de este formulario o por correo electrónico.</p>
-    <!-- Aquí irá el formulario de contacto -->
-  </main>
+
+<BaseLayout base={base} title="Contacto | Devnove">
+	<span slot="title">Contacto | </span>
+	<main>
+		<h1>Contacto</h1>
+		<p>
+			Puedes contactarme a través de este formulario o por correo electrónico.
+		</p>
+		<!-- Aquí irá el formulario de contacto -->
+	</main>
 </BaseLayout>
-
-
