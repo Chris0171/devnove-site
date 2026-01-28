@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+const base = import.meta.env.BASE_URL || '/devnove-site/'
+---
+
+<BaseLayout base={base}>
+	<main>
+		<h1>Descarga privada para YOSBANY GARCES</h1>
+		<div id="form-section">
+			<form
+				id="private-download-form"
+				autocomplete="off"
+				onsubmit="return false;"
+			>
+				<label>Introduce tu contraseña para descargar:</label><br />
+				<input type="password" id="password" required />
+				<button type="submit">Acceder</button>
+				<p id="error-msg" style="color:red"></p>
+			</form>
+		</div>
+		<div id="download-section" style="display:none;">
+			<p>¡Contraseña correcta! Descarga tu archivo aquí:</p>
+			<a href={`${base}clientes/shoptrack-app-installer.zip`} download
+				>Descargar aplicación</a
+			>
+		</div>
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', function () {
+				const PASSWORD = 'demo123' // Cambia esta contraseña para cada cliente
+				const form = document.getElementById('private-download-form')
+				const errorMsg = document.getElementById('error-msg')
+				const formSection = document.getElementById('form-section')
+				const downloadSection = document.getElementById('download-section')
+				if (form) {
+					form.addEventListener('submit', function () {
+						const pass = document.getElementById('password').value
+						if (pass === PASSWORD) {
+							formSection.style.display = 'none'
+							downloadSection.style.display = 'block'
+						} else {
+							errorMsg.textContent = 'Contraseña incorrecta'
+						}
+					})
+				}
+			})
+		</script>
+	</main>
+</BaseLayout>
